@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node backend/server.js",
-    "server": "nodemon backend/server.js"
+    "server": "nodemon backend/server.js",
+    "supervisor": "supervisor backend/server.js"
   },
   "author": "Parth",
   "license": "MIT",
@@ -16,6 +17,7 @@
     "mongoose": "^6.5.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.19"
+    "nodemon": "^2.0.19",
+    "supervisor": "^0.12.0"
   }
 }
