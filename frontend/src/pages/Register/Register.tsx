@@ -1,21 +1,32 @@
 import React, { useState } from "react";
 import { FaUser } from "react-icons/fa";
 
+type FormData = {
+  name: string;
+  email: string;
+  password: string;
+  password2: string;
+};
+
 const Register = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
     password: "",
-    passwrd2: "",
+    password2: "",
   });
 
   const { name, email, password, password2 } = formData;
 
-  const inputChangeHandler = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const inputChangeHandler = (e: React.ChangeEvent) => {
+    setFormData({
+      ...formData,
+      [(e.target as HTMLInputElement).name]: (e.target as HTMLInputElement)
+        .value,
+    });
   };
 
-  const formSubmitHandler = (e) => {
+  const formSubmitHandler = (e: React.FormEvent) => {
     e.preventDefault();
   };
 
