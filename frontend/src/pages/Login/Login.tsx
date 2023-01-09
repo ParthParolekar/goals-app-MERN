@@ -1,19 +1,28 @@
 import React, { useState } from "react";
 import { FaSignInAlt } from "react-icons/fa";
 
+type FormData = {
+  email: string;
+  password: string;
+};
+
 const Login = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     email: "",
     password: "",
   });
 
   const { email, password } = formData;
 
-  const inputChangeHandler = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const inputChangeHandler = (e: React.ChangeEvent) => {
+    setFormData({
+      ...formData,
+      [(e.target as HTMLInputElement).name]: (e.target as HTMLInputElement)
+        .value,
+    });
   };
 
-  const formSubmitHandler = (e) => {
+  const formSubmitHandler = (e: React.FormEvent) => {
     e.preventDefault();
   };
 
