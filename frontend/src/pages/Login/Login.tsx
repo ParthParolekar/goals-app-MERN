@@ -52,6 +52,11 @@ const Login = () => {
     dispatch(login(userData));
   };
 
+  const guestClickHandler = () => {
+    const guestUserData = { email: "john@gmail.com", password: "123456" };
+    dispatch(login(guestUserData));
+  };
+
   if (isLoading) {
     return <Spinner />;
   }
@@ -92,6 +97,12 @@ const Login = () => {
           <div className="form-group">
             <button type="submit" className="btn btn-block">
               Submit
+            </button>
+            <button
+              className="btn btn-block btn-outline"
+              onClick={guestClickHandler}
+            >
+              Login as Guest
             </button>
           </div>
         </form>

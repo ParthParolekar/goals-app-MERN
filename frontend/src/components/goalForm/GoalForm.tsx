@@ -9,7 +9,7 @@ const GoalForm = () => {
   const formSubmitHandler = (e: React.FormEvent) => {
     e.preventDefault();
 
-    dispatch(createGoal({text}));
+    dispatch(createGoal({ text }));
     setText("");
   };
 
@@ -22,6 +22,7 @@ const GoalForm = () => {
             type="text"
             name="text"
             id="text"
+            placeholder="Set a new goal!"
             value={text}
             onChange={(e: React.ChangeEvent) =>
               setText((e.target as HTMLInputElement).value)
