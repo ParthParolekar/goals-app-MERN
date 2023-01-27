@@ -99,6 +99,14 @@ h3 {
   position: relative;
 }
 
+.goal div {
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+.goal h2 {
+  font-size: 1.2rem;
+}
+
 .goal .close {
   position: absolute;
   top: 10px;
@@ -213,5 +221,9 @@ h3 {
 
   .heading p {
     font-size: 1.5rem;
+  }
+
+  .goals {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
