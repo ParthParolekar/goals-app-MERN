@@ -86,17 +86,28 @@ h3 {
   color: #828282;
 }
 
+.form,
+.content {
+  width: 70%;
+  margin: 0 auto;
+}
+
 .goals {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 10px;
+  width: 100%;
 }
 
 .goal {
-  background-color: #f4f4f4;
   margin: 10px 0;
-  padding: 20px 0 10px;
+  padding: 20px 10px 10px;
   position: relative;
+  background-color: transparent;
+  border: 1px solid #000;
+  border-radius: 10px;
+  width: 100%;
 }
 
 .goal div {
@@ -105,21 +116,36 @@ h3 {
 }
 .goal h2 {
   font-size: 1.2rem;
+  word-wrap: break-word;
 }
 
-.goal .close {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  cursor: pointer;
-  border: none;
-  background: none;
-}
-
-.form,
-.content {
-  width: 70%;
+.goal .btn-container {
+  width: 30%;
   margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.goal .btn-container svg {
+  margin: 0;
+}
+
+.goal .btn-container button {
+  background-color: transparent;
+  cursor: pointer;
+  border: 1px solid #000;
+  border-radius: 100%;
+  width: 2.2rem;
+  height: 2.2rem;
+  padding: 10px;
+  margin: 10px auto;
+  transition: all 200ms ease-in-out;
+}
+
+.goal .btn-container button:hover {
+  background-color: #000;
+  color: #fff;
 }
 
 .form-group {
@@ -236,7 +262,7 @@ h3 {
     font-size: 1.5rem;
   }
 
-  .goals {
-    grid-template-columns: repeat(1, 1fr);
+  .goal .btn-container {
+    width: 90%;
   }
 }

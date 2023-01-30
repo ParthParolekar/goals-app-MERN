@@ -1,6 +1,7 @@
 import React from "react";
 import { useAppDispatch } from "../../app/store";
 import { deleteGoal } from "../../features/goals/goalSlice";
+import { FaTrash } from "react-icons/fa";
 
 type Goal = {
   _id: string;
@@ -21,9 +22,14 @@ const GoalItem = ({ goal }: GoalItemProps): JSX.Element => {
     <div className="goal">
       <div>{new Date(goal.createdAt).toLocaleString("en-UK")}</div>
       <h2>{goal.text}</h2>
-      <button className="close" onClick={() => dispatch(deleteGoal(goal._id))}>
-        X
-      </button>
+      <div className="btn-container">
+        <button onClick={() => dispatch(deleteGoal(goal._id))}>
+          <FaTrash size={12} />
+        </button>
+        {/* <button onClick={() => dispatch(deleteGoal(goal._id))}>
+          <FaTrash size={12} />
+        </button> */}
+      </div>
     </div>
   );
 };
